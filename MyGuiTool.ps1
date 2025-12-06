@@ -133,7 +133,7 @@ function Get-NetworkInfo {
 # Maak het hoofdvenster
 $form = New-Object System.Windows.Forms.Form
 $form.Text = 'PowerShell GUI Tool v1.0'
-$form.Size = New-Object System.Drawing.Size(600, 550)
+$form.Size = New-Object System.Drawing.Size(700, 600)
 $form.StartPosition = 'CenterScreen'
 $form.FormBorderStyle = 'FixedDialog'
 $form.MaximizeBox = $false
@@ -142,14 +142,14 @@ $form.BackColor = [System.Drawing.Color]::White
 # Header panel
 $headerPanel = New-Object System.Windows.Forms.Panel
 $headerPanel.Location = New-Object System.Drawing.Point(0, 0)
-$headerPanel.Size = New-Object System.Drawing.Size(600, 80)
+$headerPanel.Size = New-Object System.Drawing.Size(700, 80)
 $headerPanel.BackColor = [System.Drawing.Color]::FromArgb(0, 120, 215)
 $form.Controls.Add($headerPanel)
 
 # Titel label
 $titleLabel = New-Object System.Windows.Forms.Label
 $titleLabel.Location = New-Object System.Drawing.Point(20, 15)
-$titleLabel.Size = New-Object System.Drawing.Size(560, 30)
+$titleLabel.Size = New-Object System.Drawing.Size(660, 30)
 $titleLabel.Text = '⚡ PowerShell GUI Tool'
 $titleLabel.Font = New-Object System.Drawing.Font('Segoe UI', 16, [System.Drawing.FontStyle]::Bold)
 $titleLabel.ForeColor = [System.Drawing.Color]::White
@@ -158,15 +158,15 @@ $headerPanel.Controls.Add($titleLabel)
 # Beschrijving label
 $descLabel = New-Object System.Windows.Forms.Label
 $descLabel.Location = New-Object System.Drawing.Point(20, 45)
-$descLabel.Size = New-Object System.Drawing.Size(560, 25)
-$descLabel.Text = 'One-line installeerbare PowerShell tool voor systeem informatie'
+$descLabel.Size = New-Object System.Drawing.Size(660, 25)
+$descLabel.Text = 'One-line installeerbare PowerShell tool voor systeem beheer'
 $descLabel.ForeColor = [System.Drawing.Color]::FromArgb(230, 230, 230)
 $headerPanel.Controls.Add($descLabel)
 
 # Tab Control
 $tabControl = New-Object System.Windows.Forms.TabControl
 $tabControl.Location = New-Object System.Drawing.Point(10, 90)
-$tabControl.Size = New-Object System.Drawing.Size(570, 360)
+$tabControl.Size = New-Object System.Drawing.Size(670, 410)
 $form.Controls.Add($tabControl)
 
 # Tab 1: Systeem Info
@@ -176,7 +176,7 @@ $tabControl.Controls.Add($tab1)
 
 $systemInfoBox = New-Object System.Windows.Forms.TextBox
 $systemInfoBox.Location = New-Object System.Drawing.Point(10, 10)
-$systemInfoBox.Size = New-Object System.Drawing.Size(545, 240)
+$systemInfoBox.Size = New-Object System.Drawing.Size(645, 240)
 $systemInfoBox.Multiline = $true
 $systemInfoBox.ScrollBars = 'Vertical'
 $systemInfoBox.Font = New-Object System.Drawing.Font('Consolas', 9)
@@ -185,7 +185,7 @@ $tab1.Controls.Add($systemInfoBox)
 
 $btnSystemInfo = New-Object System.Windows.Forms.Button
 $btnSystemInfo.Location = New-Object System.Drawing.Point(10, 260)
-$btnSystemInfo.Size = New-Object System.Drawing.Size(170, 40)
+$btnSystemInfo.Size = New-Object System.Drawing.Size(200, 40)
 $btnSystemInfo.Text = '🔄 Ververs Systeem Info'
 $btnSystemInfo.BackColor = [System.Drawing.Color]::FromArgb(0, 120, 215)
 $btnSystemInfo.ForeColor = [System.Drawing.Color]::White
@@ -197,8 +197,8 @@ $btnSystemInfo.Add_Click({
 $tab1.Controls.Add($btnSystemInfo)
 
 $btnDiskInfo = New-Object System.Windows.Forms.Button
-$btnDiskInfo.Location = New-Object System.Drawing.Point(190, 260)
-$btnDiskInfo.Size = New-Object System.Drawing.Size(170, 40)
+$btnDiskInfo.Location = New-Object System.Drawing.Point(220, 260)
+$btnDiskInfo.Size = New-Object System.Drawing.Size(200, 40)
 $btnDiskInfo.Text = '💾 Schijf Informatie'
 $btnDiskInfo.BackColor = [System.Drawing.Color]::FromArgb(0, 120, 215)
 $btnDiskInfo.ForeColor = [System.Drawing.Color]::White
@@ -210,8 +210,8 @@ $btnDiskInfo.Add_Click({
 $tab1.Controls.Add($btnDiskInfo)
 
 $btnNetworkInfo = New-Object System.Windows.Forms.Button
-$btnNetworkInfo.Location = New-Object System.Drawing.Point(370, 260)
-$btnNetworkInfo.Size = New-Object System.Drawing.Size(170, 40)
+$btnNetworkInfo.Location = New-Object System.Drawing.Point(430, 260)
+$btnNetworkInfo.Size = New-Object System.Drawing.Size(200, 40)
 $btnNetworkInfo.Text = '🌐 Netwerk Info'
 $btnNetworkInfo.BackColor = [System.Drawing.Color]::FromArgb(0, 120, 215)
 $btnNetworkInfo.ForeColor = [System.Drawing.Color]::White
@@ -229,14 +229,14 @@ $tabControl.Controls.Add($tab2)
 
 $toolsLabel = New-Object System.Windows.Forms.Label
 $toolsLabel.Location = New-Object System.Drawing.Point(10, 10)
-$toolsLabel.Size = New-Object System.Drawing.Size(545, 25)
+$toolsLabel.Size = New-Object System.Drawing.Size(645, 25)
 $toolsLabel.Text = 'Handige systeem tools:'
 $toolsLabel.Font = New-Object System.Drawing.Font('Segoe UI', 11, [System.Drawing.FontStyle]::Bold)
 $tab2.Controls.Add($toolsLabel)
 
 $toolsOutputBox = New-Object System.Windows.Forms.TextBox
 $toolsOutputBox.Location = New-Object System.Drawing.Point(10, 180)
-$toolsOutputBox.Size = New-Object System.Drawing.Size(545, 120)
+$toolsOutputBox.Size = New-Object System.Drawing.Size(645, 180)
 $toolsOutputBox.Multiline = $true
 $toolsOutputBox.ScrollBars = 'Vertical'
 $toolsOutputBox.Font = New-Object System.Drawing.Font('Consolas', 9)
@@ -246,42 +246,42 @@ $tab2.Controls.Add($toolsOutputBox)
 # Tool buttons
 $btnTaskMgr = New-Object System.Windows.Forms.Button
 $btnTaskMgr.Location = New-Object System.Drawing.Point(10, 50)
-$btnTaskMgr.Size = New-Object System.Drawing.Size(170, 35)
+$btnTaskMgr.Size = New-Object System.Drawing.Size(200, 35)
 $btnTaskMgr.Text = '📊 Taakbeheer'
 $btnTaskMgr.Add_Click({ Start-Process taskmgr })
 $tab2.Controls.Add($btnTaskMgr)
 
 $btnDevMgr = New-Object System.Windows.Forms.Button
-$btnDevMgr.Location = New-Object System.Drawing.Point(190, 50)
-$btnDevMgr.Size = New-Object System.Drawing.Size(170, 35)
+$btnDevMgr.Location = New-Object System.Drawing.Point(220, 50)
+$btnDevMgr.Size = New-Object System.Drawing.Size(200, 35)
 $btnDevMgr.Text = '🔌 Apparaatbeheer'
 $btnDevMgr.Add_Click({ Start-Process devmgmt.msc })
 $tab2.Controls.Add($btnDevMgr)
 
 $btnServices = New-Object System.Windows.Forms.Button
-$btnServices.Location = New-Object System.Drawing.Point(370, 50)
-$btnServices.Size = New-Object System.Drawing.Size(170, 35)
+$btnServices.Location = New-Object System.Drawing.Point(430, 50)
+$btnServices.Size = New-Object System.Drawing.Size(200, 35)
 $btnServices.Text = '⚙️ Services'
 $btnServices.Add_Click({ Start-Process services.msc })
 $tab2.Controls.Add($btnServices)
 
 $btnRegedit = New-Object System.Windows.Forms.Button
 $btnRegedit.Location = New-Object System.Drawing.Point(10, 95)
-$btnRegedit.Size = New-Object System.Drawing.Size(170, 35)
+$btnRegedit.Size = New-Object System.Drawing.Size(200, 35)
 $btnRegedit.Text = '📝 Register-editor'
 $btnRegedit.Add_Click({ Start-Process regedit })
 $tab2.Controls.Add($btnRegedit)
 
 $btnEventViewer = New-Object System.Windows.Forms.Button
-$btnEventViewer.Location = New-Object System.Drawing.Point(190, 95)
-$btnEventViewer.Size = New-Object System.Drawing.Size(170, 35)
+$btnEventViewer.Location = New-Object System.Drawing.Point(220, 95)
+$btnEventViewer.Size = New-Object System.Drawing.Size(200, 35)
 $btnEventViewer.Text = '📋 Logboeken'
 $btnEventViewer.Add_Click({ Start-Process eventvwr.msc })
 $tab2.Controls.Add($btnEventViewer)
 
 $btnPing = New-Object System.Windows.Forms.Button
-$btnPing.Location = New-Object System.Drawing.Point(370, 95)
-$btnPing.Size = New-Object System.Drawing.Size(170, 35)
+$btnPing.Location = New-Object System.Drawing.Point(430, 95)
+$btnPing.Size = New-Object System.Drawing.Size(200, 35)
 $btnPing.Text = '🌐 Ping Google'
 $btnPing.Add_Click({
     $toolsOutputBox.Text = "Bezig met pingen..."
@@ -292,7 +292,7 @@ $tab2.Controls.Add($btnPing)
 
 $btnIPConfig = New-Object System.Windows.Forms.Button
 $btnIPConfig.Location = New-Object System.Drawing.Point(10, 140)
-$btnIPConfig.Size = New-Object System.Drawing.Size(170, 35)
+$btnIPConfig.Size = New-Object System.Drawing.Size(200, 35)
 $btnIPConfig.Text = '🔍 IP Configuratie'
 $btnIPConfig.Add_Click({
     $toolsOutputBox.Text = "Bezig met laden..."
@@ -302,8 +302,8 @@ $btnIPConfig.Add_Click({
 $tab2.Controls.Add($btnIPConfig)
 
 $btnFlushDNS = New-Object System.Windows.Forms.Button
-$btnFlushDNS.Location = New-Object System.Drawing.Point(190, 140)
-$btnFlushDNS.Size = New-Object System.Drawing.Size(170, 35)
+$btnFlushDNS.Location = New-Object System.Drawing.Point(220, 140)
+$btnFlushDNS.Size = New-Object System.Drawing.Size(200, 35)
 $btnFlushDNS.Text = '🔄 DNS Cache Legen'
 $btnFlushDNS.Add_Click({
     ipconfig /flushdns | Out-Null
@@ -311,14 +311,253 @@ $btnFlushDNS.Add_Click({
 })
 $tab2.Controls.Add($btnFlushDNS)
 
-# Tab 3: Over
+# Tab 3: Windows Debloat
 $tab3 = New-Object System.Windows.Forms.TabPage
-$tab3.Text = 'ℹ️ Over'
+$tab3.Text = '🗑️ Debloat'
 $tabControl.Controls.Add($tab3)
+
+$debloatLabel = New-Object System.Windows.Forms.Label
+$debloatLabel.Location = New-Object System.Drawing.Point(10, 10)
+$debloatLabel.Size = New-Object System.Drawing.Size(645, 25)
+$debloatLabel.Text = 'Windows Bloatware Verwijderen:'
+$debloatLabel.Font = New-Object System.Drawing.Font('Segoe UI', 11, [System.Drawing.FontStyle]::Bold)
+$tab3.Controls.Add($debloatLabel)
+
+$debloatWarningLabel = New-Object System.Windows.Forms.Label
+$debloatWarningLabel.Location = New-Object System.Drawing.Point(10, 40)
+$debloatWarningLabel.Size = New-Object System.Drawing.Size(645, 40)
+$debloatWarningLabel.Text = '⚠️ WAARSCHUWING: Deze acties kunnen niet ongedaan gemaakt worden. Maak eerst een systeemherstel punt!'
+$debloatWarningLabel.ForeColor = [System.Drawing.Color]::Red
+$debloatWarningLabel.Font = New-Object System.Drawing.Font('Segoe UI', 9, [System.Drawing.FontStyle]::Bold)
+$tab3.Controls.Add($debloatWarningLabel)
+
+$debloatOutputBox = New-Object System.Windows.Forms.TextBox
+$debloatOutputBox.Location = New-Object System.Drawing.Point(10, 230)
+$debloatOutputBox.Size = New-Object System.Drawing.Size(645, 130)
+$debloatOutputBox.Multiline = $true
+$debloatOutputBox.ScrollBars = 'Vertical'
+$debloatOutputBox.Font = New-Object System.Drawing.Font('Consolas', 8)
+$debloatOutputBox.ReadOnly = $true
+$tab3.Controls.Add($debloatOutputBox)
+
+# Debloat buttons
+$btnRemoveBloatware = New-Object System.Windows.Forms.Button
+$btnRemoveBloatware.Location = New-Object System.Drawing.Point(10, 90)
+$btnRemoveBloatware.Size = New-Object System.Drawing.Size(200, 40)
+$btnRemoveBloatware.Text = '🗑️ Verwijder Bloatware Apps'
+$btnRemoveBloatware.BackColor = [System.Drawing.Color]::FromArgb(220, 50, 50)
+$btnRemoveBloatware.ForeColor = [System.Drawing.Color]::White
+$btnRemoveBloatware.FlatStyle = 'Flat'
+$btnRemoveBloatware.Add_Click({
+    $result = [System.Windows.Forms.MessageBox]::Show(
+        "Weet je zeker dat je bloatware apps wilt verwijderen?`n`nDit verwijdert: Candy Crush, Xbox Game Bar, 3D Viewer, Mixed Reality Portal, en meer.",
+        "Bevestiging",
+        [System.Windows.Forms.MessageBoxButtons]::YesNo,
+        [System.Windows.Forms.MessageBoxIcon]::Warning
+    )
+    
+    if ($result -eq 'Yes') {
+        $debloatOutputBox.Text = "Bezig met verwijderen van bloatware apps...`n`n"
+        
+        $bloatware = @(
+            "Microsoft.BingWeather",
+            "Microsoft.GetHelp",
+            "Microsoft.Getstarted",
+            "Microsoft.Microsoft3DViewer",
+            "Microsoft.MicrosoftOfficeHub",
+            "Microsoft.MicrosoftSolitaireCollection",
+            "Microsoft.MixedReality.Portal",
+            "Microsoft.People",
+            "Microsoft.SkypeApp",
+            "Microsoft.Wallet",
+            "Microsoft.Xbox.TCUI",
+            "Microsoft.XboxApp",
+            "Microsoft.XboxGameOverlay",
+            "Microsoft.XboxGamingOverlay",
+            "Microsoft.XboxIdentityProvider",
+            "Microsoft.XboxSpeechToTextOverlay",
+            "Microsoft.ZuneMusic",
+            "Microsoft.ZuneVideo",
+            "*CandyCrush*",
+            "*BubbleWitch*",
+            "*Facebook*",
+            "*Twitter*",
+            "*LinkedIn*",
+            "*Duolingo*",
+            "*Spotify*"
+        )
+        
+        foreach ($app in $bloatware) {
+            try {
+                $packages = Get-AppxPackage -Name $app -AllUsers -ErrorAction SilentlyContinue
+                foreach ($package in $packages) {
+                    $debloatOutputBox.AppendText("Verwijderen: $($package.Name)...`n")
+                    Remove-AppxPackage -Package $package.PackageFullName -ErrorAction SilentlyContinue
+                    $debloatOutputBox.AppendText("  ✅ Verwijderd`n")
+                }
+            }
+            catch {
+                $debloatOutputBox.AppendText("  ❌ Fout: $($_.Exception.Message)`n")
+            }
+        }
+        
+        $debloatOutputBox.AppendText("`n✅ Bloatware verwijdering voltooid!`n")
+    }
+})
+$tab3.Controls.Add($btnRemoveBloatware)
+
+$btnDisableMSStore = New-Object System.Windows.Forms.Button
+$btnDisableMSStore.Location = New-Object System.Drawing.Point(220, 90)
+$btnDisableMSStore.Size = New-Object System.Drawing.Size(200, 40)
+$btnDisableMSStore.Text = '🚫 Uitschakelen MS Store'
+$btnDisableMSStore.BackColor = [System.Drawing.Color]::FromArgb(220, 50, 50)
+$btnDisableMSStore.ForeColor = [System.Drawing.Color]::White
+$btnDisableMSStore.FlatStyle = 'Flat'
+$btnDisableMSStore.Add_Click({
+    $result = [System.Windows.Forms.MessageBox]::Show(
+        "Weet je zeker dat je de Microsoft Store wilt uitschakelen?",
+        "Bevestiging",
+        [System.Windows.Forms.MessageBoxButtons]::YesNo,
+        [System.Windows.Forms.MessageBoxIcon]::Warning
+    )
+    
+    if ($result -eq 'Yes') {
+        $debloatOutputBox.Text = "Bezig met uitschakelen Microsoft Store...`n"
+        try {
+            Get-AppxPackage *windowsstore* | Remove-AppxPackage -ErrorAction Stop
+            $debloatOutputBox.AppendText("✅ Microsoft Store succesvol uitgeschakeld!`n")
+        }
+        catch {
+            $debloatOutputBox.AppendText("❌ Fout: $($_.Exception.Message)`n")
+        }
+    }
+})
+$tab3.Controls.Add($btnDisableMSStore)
+
+$btnRemoveOneDrive = New-Object System.Windows.Forms.Button
+$btnRemoveOneDrive.Location = New-Object System.Drawing.Point(430, 90)
+$btnRemoveOneDrive.Size = New-Object System.Drawing.Size(200, 40)
+$btnRemoveOneDrive.Text = '☁️ Verwijder OneDrive'
+$btnRemoveOneDrive.BackColor = [System.Drawing.Color]::FromArgb(220, 50, 50)
+$btnRemoveOneDrive.ForeColor = [System.Drawing.Color]::White
+$btnRemoveOneDrive.FlatStyle = 'Flat'
+$btnRemoveOneDrive.Add_Click({
+    $result = [System.Windows.Forms.MessageBox]::Show(
+        "Weet je zeker dat je OneDrive wilt verwijderen?",
+        "Bevestiging",
+        [System.Windows.Forms.MessageBoxButtons]::YesNo,
+        [System.Windows.Forms.MessageBoxIcon]::Warning
+    )
+    
+    if ($result -eq 'Yes') {
+        $debloatOutputBox.Text = "Bezig met verwijderen van OneDrive...`n"
+        try {
+            taskkill /f /im OneDrive.exe 2>&1 | Out-Null
+            Start-Sleep -Seconds 2
+            
+            $oneDrivePath = "$env:SystemRoot\SysWOW64\OneDriveSetup.exe"
+            if (!(Test-Path $oneDrivePath)) {
+                $oneDrivePath = "$env:SystemRoot\System32\OneDriveSetup.exe"
+            }
+            
+            if (Test-Path $oneDrivePath) {
+                Start-Process $oneDrivePath "/uninstall" -NoNewWindow -Wait
+                $debloatOutputBox.AppendText("✅ OneDrive succesvol verwijderd!`n")
+            }
+            else {
+                $debloatOutputBox.AppendText("❌ OneDrive installer niet gevonden`n")
+            }
+        }
+        catch {
+            $debloatOutputBox.AppendText("❌ Fout: $($_.Exception.Message)`n")
+        }
+    }
+})
+$tab3.Controls.Add($btnRemoveOneDrive)
+
+$btnDisableTelemetry = New-Object System.Windows.Forms.Button
+$btnDisableTelemetry.Location = New-Object System.Drawing.Point(10, 140)
+$btnDisableTelemetry.Size = New-Object System.Drawing.Size(200, 40)
+$btnDisableTelemetry.Text = '📡 Uitschakelen Telemetrie'
+$btnDisableTelemetry.BackColor = [System.Drawing.Color]::FromArgb(220, 50, 50)
+$btnDisableTelemetry.ForeColor = [System.Drawing.Color]::White
+$btnDisableTelemetry.FlatStyle = 'Flat'
+$btnDisableTelemetry.Add_Click({
+    $debloatOutputBox.Text = "Bezig met uitschakelen telemetrie...`n"
+    try {
+        # Stop telemetrie services
+        Stop-Service DiagTrack -ErrorAction SilentlyContinue
+        Stop-Service dmwappushservice -ErrorAction SilentlyContinue
+        Set-Service DiagTrack -StartupType Disabled -ErrorAction SilentlyContinue
+        Set-Service dmwappushservice -StartupType Disabled -ErrorAction SilentlyContinue
+        $debloatOutputBox.AppendText("✅ Telemetrie services uitgeschakeld!`n")
+    }
+    catch {
+        $debloatOutputBox.AppendText("❌ Fout: $($_.Exception.Message)`n")
+    }
+})
+$tab3.Controls.Add($btnDisableTelemetry)
+
+$btnDisableCortana = New-Object System.Windows.Forms.Button
+$btnDisableCortana.Location = New-Object System.Drawing.Point(220, 140)
+$btnDisableCortana.Size = New-Object System.Drawing.Size(200, 40)
+$btnDisableCortana.Text = '🎤 Uitschakelen Cortana'
+$btnDisableCortana.BackColor = [System.Drawing.Color]::FromArgb(220, 50, 50)
+$btnDisableCortana.ForeColor = [System.Drawing.Color]::White
+$btnDisableCortana.FlatStyle = 'Flat'
+$btnDisableCortana.Add_Click({
+    $debloatOutputBox.Text = "Bezig met uitschakelen Cortana...`n"
+    try {
+        Get-AppxPackage *Microsoft.549981C3F5F10* | Remove-AppxPackage -ErrorAction SilentlyContinue
+        $debloatOutputBox.AppendText("✅ Cortana uitgeschakeld!`n")
+    }
+    catch {
+        $debloatOutputBox.AppendText("❌ Fout: $($_.Exception.Message)`n")
+    }
+})
+$tab3.Controls.Add($btnDisableCortana)
+
+$btnCreateRestorePoint = New-Object System.Windows.Forms.Button
+$btnCreateRestorePoint.Location = New-Object System.Drawing.Point(430, 140)
+$btnCreateRestorePoint.Size = New-Object System.Drawing.Size(200, 40)
+$btnCreateRestorePoint.Text = '💾 Maak Herstel Punt'
+$btnCreateRestorePoint.BackColor = [System.Drawing.Color]::FromArgb(0, 120, 215)
+$btnCreateRestorePoint.ForeColor = [System.Drawing.Color]::White
+$btnCreateRestorePoint.FlatStyle = 'Flat'
+$btnCreateRestorePoint.Add_Click({
+    $debloatOutputBox.Text = "Bezig met maken van systeemherstel punt...`n"
+    try {
+        Checkpoint-Computer -Description "PowerShell GUI Tool Backup" -RestorePointType "MODIFY_SETTINGS"
+        $debloatOutputBox.AppendText("✅ Systeemherstel punt succesvol aangemaakt!`n")
+    }
+    catch {
+        $debloatOutputBox.AppendText("❌ Fout: $($_.Exception.Message)`n")
+        $debloatOutputBox.AppendText("Mogelijk zijn systeemherstel punten uitgeschakeld.`n")
+    }
+})
+$tab3.Controls.Add($btnCreateRestorePoint)
+
+$btnListInstalledApps = New-Object System.Windows.Forms.Button
+$btnListInstalledApps.Location = New-Object System.Drawing.Point(10, 190)
+$btnListInstalledApps.Size = New-Object System.Drawing.Size(200, 30)
+$btnListInstalledApps.Text = '📋 Toon Alle Store Apps'
+$btnListInstalledApps.Add_Click({
+    $debloatOutputBox.Text = "Bezig met laden van geïnstalleerde apps...`n`n"
+    $apps = Get-AppxPackage | Select-Object Name | Sort-Object Name
+    foreach ($app in $apps) {
+        $debloatOutputBox.AppendText("$($app.Name)`n")
+    }
+})
+$tab3.Controls.Add($btnListInstalledApps)
+
+# Tab 4: Over
+$tab4 = New-Object System.Windows.Forms.TabPage
+$tab4.Text = 'ℹ️ Over'
+$tabControl.Controls.Add($tab4)
 
 $aboutText = New-Object System.Windows.Forms.TextBox
 $aboutText.Location = New-Object System.Drawing.Point(10, 10)
-$aboutText.Size = New-Object System.Drawing.Size(545, 290)
+$aboutText.Size = New-Object System.Drawing.Size(645, 350)
 $aboutText.Multiline = $true
 $aboutText.ScrollBars = 'Vertical'
 $aboutText.Font = New-Object System.Drawing.Font('Segoe UI', 10)
@@ -332,56 +571,7 @@ $aboutText.Text = @"
    Start deze tool met één regel PowerShell!
 
 🚀 Gebruik:
-   irm https://raw.githubusercontent.com/pieterpostNL/PowerShell-GUI-Tool/main/tool.ps1 | iex
+   irm https://raw.githubusercontent.com/pieterpostNL/PowerShell-GUI-Tool/main/MyGuiTool.ps1 | iex
 
 ✨ Functies:
-   • Systeem informatie
-   • Schijf en netwerk analyse
-   • Handige Windows tools
-   • Modern GUI interface
-   • Plug & Play installatie
-
-🔧 Vereisten:
-   • PowerShell 5.1 of hoger
-   • Windows OS
-   • Minimale rechten vereist
-
-💡 Tips:
-   • Druk op de knoppen om functies uit te proberen
-   • Gebruik de tabs om tussen secties te schakelen
-   • Alle info wordt real-time opgehaald
-
-📝 Repository:
-   github.com/pieterpostNL/PowerShell-GUI-Tool
-
-⚖️ Licentie: MIT
-📅 Versie: 1.0
-👨‍💻 Made with PowerShell
-"@
-$tab3.Controls.Add($aboutText)
-
-# Footer buttons
-$btnClose = New-Object System.Windows.Forms.Button
-$btnClose.Location = New-Object System.Drawing.Point(450, 460)
-$btnClose.Size = New-Object System.Drawing.Size(120, 35)
-$btnClose.Text = '❌ Sluiten'
-$btnClose.BackColor = [System.Drawing.Color]::FromArgb(232, 17, 35)
-$btnClose.ForeColor = [System.Drawing.Color]::White
-$btnClose.FlatStyle = 'Flat'
-$btnClose.Add_Click({ $form.Close() })
-$form.Controls.Add($btnClose)
-
-# Versie label
-$versionLabel = New-Object System.Windows.Forms.Label
-$versionLabel.Location = New-Object System.Drawing.Point(20, 470)
-$versionLabel.Size = New-Object System.Drawing.Size(200, 20)
-$versionLabel.Text = 'v1.0 | github.com/pieterpostNL'
-$versionLabel.ForeColor = [System.Drawing.Color]::Gray
-$form.Controls.Add($versionLabel)
-
-# Laad systeem info bij opstarten
-$systemInfoBox.Text = Get-SystemInfo
-
-# Toon het formulier
-$form.Add_Shown({$form.Activate()})
-[void]$form.ShowDialog()
+   • Syst
